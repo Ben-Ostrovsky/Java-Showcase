@@ -3,7 +3,7 @@ class Solution {
         int length = s.length();
         int testingLen = length;
         while(testingLen>1){
-            for(int i=testingLen; i<=length;i++){
+            for(int i=testingLen; i<=length; i++){
                  String test = s.substring(i-testingLen,i);
                  if (isPalindrome(test)){
                     return test;
