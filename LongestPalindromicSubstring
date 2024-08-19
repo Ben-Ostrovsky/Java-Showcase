@@ -1,0 +1,29 @@
+class Solution {
+    public String longestPalindrome(String s) {
+        int length = s.length();
+        int testingLen = length;
+        while(testingLen>1){
+            for(int i=testingLen; i<=length;i++){
+                 String test = s.substring(i-testingLen,i);
+                 if (isPalindrome(test)){
+                    return test;
+                 }
+            }
+            testingLen--;
+           
+        }
+       return s.substring(0,1);
+    }
+    public static boolean isPalindrome(String s){
+        int i = 0;
+        int j = s.length()-1;
+        while(i<j){
+            if (s.charAt(i) != s.charAt(j)){
+                return false;
+                }
+            i++;
+            j-=1;
+            }
+        return true;
+    }
+}
